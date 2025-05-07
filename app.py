@@ -166,4 +166,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = GraphApp(root)
     root.mainloop()
+    print("Hello Text2Graph")
 #   pass
