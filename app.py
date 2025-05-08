@@ -5,6 +5,7 @@ from threading import Thread
 from lab1 import TextToGraph  # 请确保这个模块存在
 
 # 这是一个GUI界面，实现了类GraphApp
+# 详情类逻辑请到文件lab1中查看类TextToGraph
 class GraphApp:
     def __init__(self, root):
         self.text = None
@@ -168,3 +169,4 @@ if __name__ == "__main__":
     root.mainloop()
     print("Hello Text2Graph")
 #   pass
+
