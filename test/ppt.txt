@@ -1,8 +1,6 @@
 To explore strange new worlds,
 To seek out new life and new civilizations
 something is modified
-<<<<<<< HEAD
 modified in B1
-=======
 modified in C4
->>>>>>> C4
+modified in B2
