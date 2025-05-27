@@ -178,8 +178,8 @@ class TextToGraph:
         all_paths = self.find_all_paths(word1, word2, set(), [], 0)
 
         if not all_paths:
+            print("两节点之间没有最短路径")
             return None
-
         # print(f"The path between {word1} {word2} is: ")
         # for path, length in all_paths:
         #     print(f"Path: {' -> '.join(path)}, Length: {length}")
@@ -189,7 +189,7 @@ class TextToGraph:
 
         dot_file_path = f"./graph/directed_graph_shortest{i}.dot"
         self.create_dot_file(dot_file_path, shortest_paths, root)
-
+        print(f"两节点之间最短路径及其长度为：{shortest_paths}")
         return shortest_paths
 
     def page_rank(self, text, d: float = 0.85, max_iterations: int = 100, tol: float = 1e-6, use_tfidf: bool = True) -> Dict[str, float]:

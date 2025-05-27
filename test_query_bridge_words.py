@@ -52,10 +52,18 @@ def test_case_6(graph, capsys):
     captured = capsys.readouterr().out
     assert result is None
     assert "@” 不是合法的小写单词" in captured
+    result = graph.query_bridge_words("so", "@")
+    captured = capsys.readouterr().out
+    assert result is None
+    assert "@” 不是合法的小写单词" in captured
 
 def test_case_7(graph, capsys):
     # ("the", "")，字符数小于2
     result = graph.query_bridge_words("the", "")
+    captured = capsys.readouterr().out
+    assert result is None
+    assert "单词不能为空" in captured
+    result = graph.query_bridge_words("", "the")
     captured = capsys.readouterr().out
     assert result is None
     assert "单词不能为空" in captured
