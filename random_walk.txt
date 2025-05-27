@@ -1,0 +1,39 @@
+随机游走的节点:
+data wrote a detailed report with the team requested more data so the report with the scientist analyzed the team requested more data so the data wrote a detailed report and shared the team but
+
+遍历的边:
+data -> wrote
+wrote -> a
+a -> detailed
+detailed -> report
+report -> with
+with -> the
+the -> team
+team -> requested
+requested -> more
+more -> data
+data -> so
+so -> the
+the -> report
+report -> with
+with -> the
+the -> scientist
+scientist -> analyzed
+analyzed -> the
+the -> team
+team -> requested
+requested -> more
+more -> data
+data -> so
+so -> the
+the -> data
+data -> wrote
+wrote -> a
+a -> detailed
+detailed -> report
+report -> and
+and -> shared
+shared -> the
+the -> team
+team -> but
+but -> the

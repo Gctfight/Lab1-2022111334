@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 import random
 import sys
@@ -85,12 +87,25 @@ class TextToGraph:
         self.create_dot_file(dot_file_path, None, words[0])
         return words
 
-    def query_bridge_words(self, start: str, end: str, print_result: bool = True) -> Optional[Set[str]]:
+    def query_bridge_words(self, start: str, end: str) -> Optional[Set[str]]:
+        # ✅ 1. 判断是否为空字符串
+        if not start or not end:
+            if not start:
+                print("单词不能为空")
+            if not end:
+                print("单词不能为空")
+            return None
+        # ✅ 检查是否为小写单词，只允许 a-z
+        if not re.fullmatch(r"[a-z]+", start):
+            print(f"“{start}” 不是合法的小写单词")
+            return None
+        if not re.fullmatch(r"[a-z]+", end):
+            print(f"“{end}” 不是合法的小写单词")
+            return None
         bridge_words = set()
-
+        print_result = True
         if start not in self.directed_graph:
-            if print_result:
-                print(f"在图中没有“{start}”")
+            print(f"在图中没有“{start}”")
             return None
 
         if end not in self.directed_graph:
@@ -149,7 +164,7 @@ class TextToGraph:
             next_word = words[i + 1]
             new_text.append(current_word)
 
-            bridge_words = self.query_bridge_words(current_word, next_word, False)
+            bridge_words = self.query_bridge_words(current_word, next_word)
             if bridge_words:
                 bridge_word = random.choice(list(bridge_words))
                 new_text.append(bridge_word)
@@ -286,7 +301,7 @@ class TextToGraph:
 
 
 def main():
-    file_path = "./test/ppt.txt"
+    file_path = "./test/Easy Test.txt"
     dot_file_path = "./graph/directed_graph.dot"
 
     if len(sys.argv) > 1:
